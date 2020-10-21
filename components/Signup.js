@@ -8,10 +8,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import logoIcon from '../src/images/app_logo.png'
 import usernameIcon from '../src/images/ic_user.png'
+import emailIcon from '../src/images/ic_email.png'
 import passwordIcon from '../src/images/ic_password.png'
 import { StyleSheet, TextInput, Image, TouchableOpacity, Text, View } from 'react-native';
 
-export default function Login({ navigation }) {
+export default function Signup({ navigation }) {
   return (
     <View style={styles.containerBody}>
       <StatusBar style="auto" />
@@ -28,6 +29,13 @@ export default function Login({ navigation }) {
             placeholderTextColor="#78909c"/>
         </View>
         <View style={styles.containerInput}>
+          <Image style={styles.inputIcon} source={emailIcon}  />
+          <TextInput
+            style={styles.input}
+            placeholder={'Email'}
+            placeholderTextColor="#78909c"/>
+        </View>
+        <View style={styles.containerInput}>
           <Image style={styles.inputIcon} source={passwordIcon}  />
           <TextInput
             style={styles.input}
@@ -36,11 +44,11 @@ export default function Login({ navigation }) {
         </View>
       </View>
       <TouchableOpacity style={styles.containerButton}>
-          <Text style={styles.buttonText}> Sign In </Text>
+          <Text style={styles.buttonText}> Sign Up </Text>
       </TouchableOpacity>
       <View style={styles.containerLabel}>
-        <Text style={styles.label}>Don't have an account?  </Text>
-        <Text onPress={()=>navigation.navigate("Signup")} style={styles.signUpLabel}>Sign up</Text>
+        <Text style={styles.label}>Already have account?  </Text>
+        <Text onPress={()=>navigation.navigate("Login")}  style={styles.signUpLabel}>Sign In</Text>
       </View>
     </View>
   );

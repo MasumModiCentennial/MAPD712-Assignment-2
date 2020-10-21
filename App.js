@@ -7,6 +7,7 @@ Group No: 6
 import React from 'react';
 import SplashScreen from './components/SplashScreen'
 import Login from './components/Login'
+import Signup from './components/Signup'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 
@@ -18,6 +19,7 @@ export default function App() {
      <Navigator>
        <Screen name="SplashScreen" component={SplashScreen} />
        <Screen name="Login" component={Login} />
+       <Screen name="Signup" component={Signup} />
      </Navigator>
    </NavigationContainer>
   );

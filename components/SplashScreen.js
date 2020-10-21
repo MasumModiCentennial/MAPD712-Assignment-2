@@ -23,7 +23,7 @@ export default function SplashScreen({ navigation }) {
         style={styles.tinyLogo}
         source={logoIcon}
         />
-      <Text onPress={()=> navigation.navigate("Login")} style={styles.title}>24x7 Medical Support</Text>
+      <Text style={styles.title}>24x7 Medical Support</Text>
       <StatusBar style="auto" />
     </View>
   );
