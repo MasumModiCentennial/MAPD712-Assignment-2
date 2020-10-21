@@ -8,6 +8,7 @@ import React from 'react';
 import SplashScreen from './components/SplashScreen'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import PatientsList from './components/PatientsList';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 
@@ -20,6 +21,7 @@ export default function App() {
        <Screen name="SplashScreen" component={SplashScreen} />
        <Screen name="Login" component={Login} />
        <Screen name="Signup" component={Signup} />
+       <Screen name="PatientsList" component={PatientsList} />
      </Navigator>
    </NavigationContainer>
   );

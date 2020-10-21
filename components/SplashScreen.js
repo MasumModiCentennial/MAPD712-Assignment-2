@@ -14,7 +14,7 @@ export default function SplashScreen({ navigation }) {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate("Login")
-    }, 3000);
+    }, 2000);
   }, []);
   
   return (

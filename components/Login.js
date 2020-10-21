@@ -36,7 +36,7 @@ export default function Login({ navigation }) {
         </View>
       </View>
       <TouchableOpacity style={styles.containerButton}>
-          <Text style={styles.buttonText}> Sign In </Text>
+          <Text onPress={()=>navigation.navigate("PatientsList")} style={styles.buttonText}> Sign In </Text>
       </TouchableOpacity>
       <View style={styles.containerLabel}>
         <Text style={styles.label}>Don't have an account?  </Text>
