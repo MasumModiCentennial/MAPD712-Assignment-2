@@ -6,12 +6,17 @@ Group No: 6
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import logoIcon from './src/images/app_logo.png'
+import { StyleSheet, Image, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+       <Image
+        style={styles.tinyLogo}
+        source={logoIcon}
+        />
+      <Text style={styles.title}>24x7 Medical Support</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -23,5 +28,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  tinyLogo: {
+    width: 150,
+    height: 150,
+  },
+  title: {
+    fontSize: 18,
+    marginTop: 50,
+    color: '#4dd0e1',
   },
 });
