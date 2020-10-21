@@ -1,3 +1,9 @@
+/*
+Name: Masum Modi and Manoj Manikantan Murlitharan
+Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
+Group No: 6
+*/
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
