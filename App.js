@@ -4,38 +4,21 @@ Assignment: Milestone 2: Prototype, interface implementation, implementing selec
 Group No: 6
 */
 
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import logoIcon from './src/images/app_logo.png'
-import { StyleSheet, Image, Text, View } from 'react-native';
+import SplashScreen from './components/SplashScreen'
+import Login from './components/Login'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
+
+const { Navigator, Screen} = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-       <Image
-        style={styles.tinyLogo}
-        source={logoIcon}
-        />
-      <Text style={styles.title}>24x7 Medical Support</Text>
-      <StatusBar style="auto" />
-    </View>
+   <NavigationContainer>
+     <Navigator>
+       <Screen name="SplashScreen" component={SplashScreen} />
+       <Screen name="Login" component={Login} />
+     </Navigator>
+   </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  tinyLogo: {
-    width: 150,
-    height: 150,
-  },
-  title: {
-    fontSize: 18,
-    marginTop: 50,
-    color: '#4dd0e1',
-  },
-});
