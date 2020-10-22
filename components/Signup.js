@@ -44,7 +44,7 @@ export default function Signup({ navigation }) {
         </View>
       </View>
       <TouchableOpacity style={styles.containerButton}>
-          <Text onPress={()=>navigation.navigate("PatientsList")} style={styles.buttonText}> Sign Up </Text>
+          <Text onPress={()=>navigation.navigate("Signup")} style={styles.buttonText}> Sign Up </Text>
       </TouchableOpacity>
       <View style={styles.containerLabel}>
         <Text style={styles.label}>Already have account?  </Text>

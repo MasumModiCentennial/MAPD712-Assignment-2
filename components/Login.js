@@ -40,7 +40,7 @@ export default function Login({ navigation }) {
       </TouchableOpacity>
       <View style={styles.containerLabel}>
         <Text style={styles.label}>Don't have an account?  </Text>
-        <Text style={styles.signUpLabel}>Sign up</Text>
+        <Text onPress={()=>navigation.navigate("Signup")} style={styles.signUpLabel}>Sign up</Text>
       </View>
     </View>
   );

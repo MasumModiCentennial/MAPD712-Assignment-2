@@ -77,24 +77,24 @@ export default function PatientRecord({ navigation }) {
 const styles = StyleSheet.create({
     containerBody: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#fff'
     },
     containerForm: {
         flex: 1,
-        margin: 10,
+        margin: 10
     },
     containerLabel: {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'flex-start',
-        marginLeft: 20,
+        marginLeft: 20
     },
     containerInput: {
         flexDirection: 'row',
         alignItems: 'center',
         padding: 10,
         borderBottomWidth: 0.7,
-        borderBottomColor: '#78909c',
+        borderBottomColor: '#78909c'
     },
     containerFloating: {
         alignItems: "flex-end",
@@ -102,21 +102,21 @@ const styles = StyleSheet.create({
     },
     listIcon: {
         width: 60,
-        height: 60,
+        height: 60
     },
     labelHeadings: {
         fontSize: 14,
         color: '#78909c',
-        fontWeight: '700',
+        fontWeight: '700'
     },
     labelRecords: {
         fontSize: 12,
         color: '#78909c',
-        fontWeight: '300',
+        fontWeight: '300'
     },
     labelDate: {
         fontSize: 11,
         color: '#78909c',
-        fontWeight: '300',
+        fontWeight: '300'
     }
 });

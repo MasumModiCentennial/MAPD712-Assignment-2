@@ -9,6 +9,7 @@ import SplashScreen from './components/SplashScreen'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import PatientsList from './components/PatientsList';
+import AddPatient from './components/AddPatient';
 import PatientInformation from './components/PatientInformation';
 import PatientRecord from './components/PatientRecord';
 import { NavigationContainer } from '@react-navigation/native';
@@ -24,6 +25,7 @@ export default function App() {
        <Screen name="Login" component={Login} />
        <Screen name="Signup" component={Signup} />
        <Screen name="PatientsList" component={PatientsList} />
+       <Screen name="AddPatient" component={AddPatient} />
        <Screen name="PatientInformation" component={PatientInformation} />
        <Screen name="PatientRecord" component={PatientRecord} />
      </Navigator>
