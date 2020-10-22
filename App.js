@@ -12,6 +12,8 @@ import PatientsList from './components/PatientsList';
 import AddPatient from './components/AddPatient';
 import PatientInformation from './components/PatientInformation';
 import PatientRecord from './components/PatientRecord';
+import AddPatientRecord from './components/AddPatientRecord';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 
@@ -28,6 +30,7 @@ export default function App() {
        <Screen name="AddPatient" component={AddPatient} />
        <Screen name="PatientInformation" component={PatientInformation} />
        <Screen name="PatientRecord" component={PatientRecord} />
+       <Screen name="AddPatientRecord" component={AddPatientRecord} />
      </Navigator>
    </NavigationContainer>
   );

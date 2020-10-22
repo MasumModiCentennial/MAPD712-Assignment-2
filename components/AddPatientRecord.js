@@ -1,0 +1,84 @@
+/*
+Name: Masum Modi and Manoj Manikantan Muralidharan
+Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
+Group No: 6
+*/
+
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, TextInput, TouchableOpacity, Text, View } from 'react-native';
+
+export default function AddPatientRecord({ navigation }) {
+    return (
+        <View style={styles.containerBody}>
+            <StatusBar style="auto" />
+            <View style={styles.containerForm}>
+                <View style={styles.containerInput}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder={'Blood Pressure (X/Y mmHg)'}
+                        placeholderTextColor="#78909c" />
+                </View>
+                <View style={styles.containerInput}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder={'Respiratory Rate (X/min)'}
+                        placeholderTextColor="#78909c" />
+                </View>
+                <View style={styles.containerInput}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder={'Blood Oxygen Level (X%)'}
+                        placeholderTextColor="#78909c" />
+                </View>
+                <View style={styles.containerInput}>
+                    <TextInput
+                        style={styles.input}
+                        placeholder={'Heartbeat Rate (X/min)'}
+                        placeholderTextColor="#78909c" />
+                </View>
+            </View>
+            <TouchableOpacity style={styles.containerButton}>
+                <Text style={styles.buttonText}> Add Record </Text>
+            </TouchableOpacity>
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    containerBody: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    containerForm: {
+        flex: 1,
+        margin: 40,
+    },
+    containerInput: {
+        marginTop: 30,
+        flexDirection: 'row',
+        paddingBottom: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#78909c',
+    },
+    containerButton: {
+        backgroundColor: '#4dd0e1',
+        borderRadius: 5,
+        marginLeft: 40,
+        marginRight: 40,
+        padding: 15,
+    },
+    input: {
+        fontSize: 18,
+        marginLeft: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#fff',
+        color: '#fff',
+    },
+    buttonText: {
+        fontSize: 18,
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: 'bold',
+    }
+});

@@ -6,7 +6,7 @@ Group No: 6
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
+import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native';
 import floatingButtonIcon from '../src/images/ic_floating_button.png'
 
 
@@ -68,7 +68,9 @@ export default function PatientRecord({ navigation }) {
                 </View>
             </View>
             <View style={styles.containerFloating}>
-                <Image style={styles.listIcon} source={floatingButtonIcon} />
+                <TouchableOpacity onPress={() => navigation.navigate("AddPatientRecord")}>
+                    <Image style={styles.listIcon} source={floatingButtonIcon} />
+                </TouchableOpacity>
             </View>
         </View>
     );
