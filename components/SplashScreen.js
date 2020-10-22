@@ -1,7 +1,7 @@
 /*
-Name: Masum Modi and Manoj Manikantan Murlitharan
-Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
+Name: Masum Modi and Manoj Manikantan Muralidharan
 Group No: 6
+Description : Splash screen
 */
 
 import { StatusBar } from 'expo-status-bar';

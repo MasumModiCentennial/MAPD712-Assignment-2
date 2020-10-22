@@ -1,7 +1,7 @@
 /*
 Name: Masum Modi and Manoj Manikantan Muralidharan
-Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
 Group No: 6
+Description : View patient's information screen
 */
 
 import { StatusBar } from 'expo-status-bar';

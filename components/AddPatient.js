@@ -1,5 +1,5 @@
 /*
-Name: Masum Modi and Manoj Manikantan Murlitharan
+Name: Masum Modi and Manoj Manikantan Muralidharan
 Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
 Group No: 6
 */
