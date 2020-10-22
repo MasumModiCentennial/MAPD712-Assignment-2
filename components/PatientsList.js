@@ -1,5 +1,5 @@
 /*
-Name: Masum Modi and Manoj Manikantan Murlitharan
+Name: Masum Modi and Manoj Manikantan Muralidharan
 Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
 Group No: 6
 */
@@ -18,35 +18,37 @@ export default function PatientsList({ navigation }) {
       <StatusBar style="auto" />
       <View style={styles.containerForm}>
         <View style={styles.containerInput}>
-          <Image style={styles.listIcon} source={femaleAvatarIcon}  />
+          <Image style={styles.listIcon} source={femaleAvatarIcon} />
           <View style={styles.containerLabel}>
             <Text style={styles.labelUsername}> Anna Watson  </Text>
             <Text style={styles.labelMobile}>+1 226 338 0980</Text>
             <Text style={styles.labelVisit}>Last visited March 23, 2020</Text>
           </View>
-          <Image style={styles.listSmallIcon} source={rightArrowIcon}  />
+          <Image style={styles.listSmallIcon} source={rightArrowIcon} />
         </View>
         <View style={styles.containerInput}>
-          <Image style={styles.listIcon} source={maleAvatarIcon}  />
+          <Image style={styles.listIcon} source={maleAvatarIcon} />
           <View style={styles.containerLabel}>
             <Text style={styles.labelUsername}> John Snow  </Text>
             <Text style={styles.labelMobile}>+1 226 669 9980</Text>
             <Text style={styles.labelVisit}>Last visited Feb 22, 2020</Text>
           </View>
-          <Image style={styles.listSmallIcon} source={rightArrowIcon}  />
+          <TouchableOpacity onPress={() => navigation.navigate("PatientInformation")}>
+            <Image style={styles.listSmallIcon} source={rightArrowIcon} />
+          </TouchableOpacity>
         </View>
         <View style={styles.containerInput}>
-          <Image style={styles.listIcon} source={maleAvatarIcon}  />
+          <Image style={styles.listIcon} source={maleAvatarIcon} />
           <View style={styles.containerLabel}>
             <Text style={styles.labelUsername}> Agent Hunt  </Text>
             <Text style={styles.labelMobile}>+1 226 667 8900</Text>
             <Text style={styles.labelVisit}>Last visited Jan 01, 2020</Text>
           </View>
-          <Image style={styles.listSmallIcon} source={rightArrowIcon}  />
+          <Image style={styles.listSmallIcon} source={rightArrowIcon} />
         </View>
       </View>
       <View style={styles.containerFloating}>
-        <Image style={styles.listIcon} source={floatingButtonIcon}  />
+        <Image style={styles.listIcon} source={floatingButtonIcon} />
       </View>
     </View>
   );
@@ -56,13 +58,13 @@ const styles = StyleSheet.create({
   containerBody: {
     flex: 1,
     backgroundColor: '#fff',
-  }, 
+  },
   containerForm: {
-    flex:1,
+    flex: 1,
     margin: 10,
   },
   containerLabel: {
-    flex:1,
+    flex: 1,
     flexDirection: 'column',
     alignItems: 'flex-start',
     marginLeft: 20,
@@ -75,11 +77,11 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     borderBottomWidth: 0.7,
-    borderBottomColor:'#78909c',
+    borderBottomColor: '#78909c',
   },
   containerFloating: {
-    alignItems:"flex-end", 
-    padding:20
+    alignItems: "flex-end",
+    padding: 20
   },
   listIcon: {
     width: 60,

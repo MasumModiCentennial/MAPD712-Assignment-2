@@ -1,5 +1,5 @@
 /*
-Name: Masum Modi and Manoj Manikantan Murlitharan
+Name: Masum Modi and Manoj Manikantan Muralidharan
 Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
 Group No: 6
 */
@@ -36,11 +36,11 @@ export default function Login({ navigation }) {
         </View>
       </View>
       <TouchableOpacity style={styles.containerButton}>
-          <Text onPress={()=>navigation.navigate("PatientsList")} style={styles.buttonText}> Sign In </Text>
+          <Text onPress={()=>navigation.navigate("PatientsList")} style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
       <View style={styles.containerLabel}>
         <Text style={styles.label}>Don't have an account?  </Text>
-        <Text onPress={()=>navigation.navigate("Signup")} style={styles.signUpLabel}>Sign up</Text>
+        <Text style={styles.signUpLabel}>Sign up</Text>
       </View>
     </View>
   );
