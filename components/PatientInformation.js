@@ -40,7 +40,7 @@ export default function PatientsList({ navigation }) {
                     <Text style={styles.labelHeadings}>Address : </Text>
                     <Text style={styles.labelPatientInfo}>46, Spruce Street, Waterloo, ON</Text>
                 </View>
-                <TouchableOpacity style={styles.containerButton}>
+                <TouchableOpacity onPress={()=>navigation.navigate("PatientRecord")} style={styles.containerButton}>
                     <Text style={styles.buttonText}>View Records</Text>
                 </TouchableOpacity>
             </View>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         marginTop: 150,
         marginLeft: 40,
         marginRight: 40,
-        padding: 15,
+        padding: 15
     },
     buttonText: {
         fontSize: 18,

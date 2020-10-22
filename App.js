@@ -10,6 +10,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import PatientsList from './components/PatientsList';
 import PatientInformation from './components/PatientInformation';
+import PatientRecord from './components/PatientRecord';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 
@@ -24,6 +25,7 @@ export default function App() {
        <Screen name="Signup" component={Signup} />
        <Screen name="PatientsList" component={PatientsList} />
        <Screen name="PatientInformation" component={PatientInformation} />
+       <Screen name="PatientRecord" component={PatientRecord} />
      </Navigator>
    </NavigationContainer>
   );
