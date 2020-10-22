@@ -20,27 +20,23 @@ export default function PatientsList({ navigation }) {
                     </View>
                     <Text style={styles.labelPatientName}>John Snow</Text>
                 </View>
-                <View style={styles.containerInformation}>
-                    <Text style={styles.labelHeadings}>Email Id : </Text>
-                    <Text style={styles.labelPatientInfo}>Johnsnow@gmail.com</Text>
+                <View style={styles.containerInformationBody}>
+                    <View style={styles.containerInformation}>
+                        <Text style={styles.labelHeadings}>Email Id :</Text>
+                        <Text style={styles.labelHeadings}>Phone Number :</Text>
+                        <Text style={styles.labelHeadings}>Age :</Text>
+                        <Text style={styles.labelHeadings}>Blood Group :</Text>
+                        <Text style={styles.labelHeadings}>Address :</Text>
+                    </View>
+                    <View style={styles.containerInformation}>
+                        <Text style={styles.labelPatientInfo}>Johnsnow@gmail.com</Text>
+                        <Text style={styles.labelPatientInfo}>+1 226 776 3389</Text>
+                        <Text style={styles.labelPatientInfo}>30</Text>
+                        <Text style={styles.labelPatientInfo}>A+</Text>
+                        <Text style={styles.labelPatientInfo}>46, Spruce Street, Waterloo, ON</Text>
+                    </View>
                 </View>
-                <View style={styles.containerInformation}>
-                    <Text style={styles.labelHeadings}>Phone Number : </Text>
-                    <Text style={styles.labelPatientInfo}>+1 226 776 3389</Text>
-                </View>
-                <View style={styles.containerInformation}>
-                    <Text style={styles.labelHeadings}>Age : </Text>
-                    <Text style={styles.labelPatientInfo}>30</Text>
-                </View>
-                <View style={styles.containerInformation}>
-                    <Text style={styles.labelHeadings}>Blood Group : </Text>
-                    <Text style={styles.labelPatientInfo}>A+</Text>
-                </View>
-                <View style={styles.containerInformation}>
-                    <Text style={styles.labelHeadings}>Address : </Text>
-                    <Text style={styles.labelPatientInfo}>46, Spruce Street, Waterloo, ON</Text>
-                </View>
-                <TouchableOpacity onPress={()=>navigation.navigate("PatientRecord")} style={styles.containerButton}>
+                <TouchableOpacity onPress={() => navigation.navigate("PatientRecord")} style={styles.containerButton}>
                     <Text style={styles.buttonText}>View Records</Text>
                 </TouchableOpacity>
             </View>
@@ -78,16 +74,19 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         borderBottomWidth: 0.7,
-        borderBottomColor: '#78909c',
+        marginBottom: 40,
+        borderBottomColor: '#78909c'
     },
-    containerInformation: {
+    containerInformationBody: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 20,
-        paddingBottom: 20,
-        paddingLeft: 10,
-        paddingRight: 10,
-        justifyContent: 'space-between'
+        padding: 20
+    },
+    containerInformation: {
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        marginLeft: 20
     },
     labelHeadings: {
         alignItems: 'flex-start',
@@ -96,15 +95,15 @@ const styles = StyleSheet.create({
         fontWeight: '700',
     },
     labelPatientInfo: {
-        alignItems: 'flex-end',
+        alignItems: 'flex-start',
         fontSize: 14,
         color: '#78909c',
-        fontWeight: '400',
+        fontWeight: '300',
     },
     containerButton: {
         backgroundColor: '#4dd0e1',
         borderRadius: 5,
-        marginTop: 150,
+        marginTop: 180,
         marginLeft: 40,
         marginRight: 40,
         padding: 15
