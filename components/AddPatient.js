@@ -5,7 +5,7 @@ Description : Add Patient Screen
 */
 
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import usernameIcon from '../src/images/ic_user.png'
 import emailIcon from '../src/images/ic_email.png'
 import phoneIcon from '../src/images/ic_phone.png'
@@ -13,7 +13,41 @@ import addressIcon from '../src/images/ic_address.png'
 import addPatientIcon from '../src/images/ic_addPatient.png'
 import { StyleSheet, TextInput, Image, TouchableOpacity, Text, View } from 'react-native';
 
+
 export default function AddPatient({ navigation }) {
+
+
+    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNum, setPhoneNum] = useState('');
+    const [age, setAge] = useState('');
+    const [address, setAddress] = useState('');
+
+    const onAddPatientClicked = () => {
+    
+        try{
+            fetch("http://192.168.1.6:4000/patients", {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                fullName: userName,
+                email: email,
+                mobileNum: phoneNum,
+                age: age,
+                bloodType: "B+",
+                address: address,
+            })
+            })
+            .then(response => response.json())
+            .then(responseJson => console.log('getting data from fetch', responseJson))
+            .catch(error=>console.log(error)) 
+        } catch (e){
+            console.log(e)
+        }
+    }
 
     return (
         <View style={styles.containerBody}>
@@ -27,6 +61,7 @@ export default function AddPatient({ navigation }) {
                     <TextInput
                         style={styles.input}
                         placeholder={'Username'}
+                        onChangeText={txt => setUserName(txt)}
                         placeholderTextColor="#78909c" />
                 </View>
                 <View style={styles.containerInput}>
@@ -34,6 +69,7 @@ export default function AddPatient({ navigation }) {
                     <TextInput
                         style={styles.input}
                         placeholder={'Email'}
+                        onChangeText={txt => setEmail(txt)}
                         placeholderTextColor="#78909c" />
                 </View>
                 <View style={styles.containerInput}>
@@ -41,19 +77,21 @@ export default function AddPatient({ navigation }) {
                     <TextInput
                         style={styles.input}
                         placeholder={'Phone Number'}
+                        onChangeText={txt => setPhoneNum(txt)}
                         placeholderTextColor="#78909c" />
                 </View>
                 <View style={styles.containerInput}>
                     <TextInput
                         style={styles.input}
                         placeholder={'Age'}
+                        onChangeText={txt => setAge(txt)}
                         placeholderTextColor="#78909c" />
                     <View style={styles.containerPicker}>
-                        <select>
+                        {/* <select>
                             <option value="A+">A+</option>
                             <option value="B+">B+</option>
                             <option value="O+">O+</option>
-                        </select>
+                        </select> */}
                     </View>
                 </View>
                 <View style={styles.containerInput}>
@@ -61,10 +99,11 @@ export default function AddPatient({ navigation }) {
                     <TextInput
                         style={styles.input}
                         placeholder={'Address'}
+                        onChangeText={txt => setAddress(txt)}
                         placeholderTextColor="#78909c" />
                 </View>
             </View>
-            <TouchableOpacity style={styles.containerButton}>
+            <TouchableOpacity onPress={onAddPatientClicked} style={styles.containerButton}>
                 <Text style={styles.buttonText}> Add Patient </Text>
             </TouchableOpacity>
         </View>
@@ -106,6 +145,7 @@ const styles = StyleSheet.create({
         marginLeft: 40,
         marginRight: 40,
         padding: 15,
+        marginBottom: 20,
     },
     containerPicker: {
         flex: 1,
