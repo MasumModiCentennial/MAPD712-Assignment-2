@@ -21,7 +21,7 @@ export default function PatientsList({ navigation }) {
                     <Text style={styles.labelPatientName}>John Snow</Text>
                 </View>
                 <View style={styles.containerInformationBody}>
-                    <View style={styles.containerInformation}>
+                    <View style={styles.containerInformationLabel}>
                         <Text style={styles.labelHeadings}>Email Id :</Text>
                         <Text style={styles.labelHeadings}>Phone Number :</Text>
                         <Text style={styles.labelHeadings}>Age :</Text>
@@ -36,9 +36,13 @@ export default function PatientsList({ navigation }) {
                         <Text style={styles.labelPatientInfo}>46, Spruce Street, Waterloo, ON</Text>
                     </View>
                 </View>
-                <TouchableOpacity onPress={() => navigation.navigate("PatientRecord")} style={styles.containerButton}>
-                    <Text style={styles.buttonText}>View Records</Text>
-                </TouchableOpacity>
+            
+                <View style={styles.containerBottom}>
+                    <TouchableOpacity onPress={() => navigation.navigate("PatientRecord")} style={styles.containerButton}>
+                        <Text style={styles.buttonText}>View Records</Text>
+                    </TouchableOpacity>
+                </View>
+        
             </View>
         </View>
     );
@@ -78,35 +82,44 @@ const styles = StyleSheet.create({
         borderBottomColor: '#78909c'
     },
     containerInformationBody: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 20
-    },
-    containerInformation: {
         flex: 1,
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+    },
+    containerBottom: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        marginBottom:20,
+    },
+    containerInformationLabel: {
         flexDirection: 'column',
         alignItems: 'flex-start',
-        marginLeft: 20
+    },
+    containerInformation: {
+        flexDirection: 'column',
+        alignItems: 'flex-end',
     },
     labelHeadings: {
         alignItems: 'flex-start',
         fontSize: 16,
+        padding: 10,
         color: '#78909c',
         fontWeight: '700',
     },
     labelPatientInfo: {
         alignItems: 'flex-start',
         fontSize: 14,
+        padding: 10,
         color: '#78909c',
         fontWeight: '300',
     },
     containerButton: {
-        backgroundColor: '#4dd0e1',
+        backgroundColor: '#78909c',
         borderRadius: 5,
-        marginTop: 180,
         marginLeft: 40,
         marginRight: 40,
-        padding: 15
+        padding: 15,
+        flex: 1
     },
     buttonText: {
         fontSize: 18,

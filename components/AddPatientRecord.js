@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
     },
     containerForm: {
         flex: 1,
-        margin: 40,
+        margin:20,
     },
     containerInput: {
-        marginTop: 30,
+        margin:20,
         flexDirection: 'row',
         paddingBottom: 10,
         borderBottomWidth: 1,
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
         marginLeft: 40,
         marginRight: 40,
         padding: 15,
+        marginBottom: 30,
     },
     input: {
         fontSize: 18,
-        marginLeft: 20,
         borderBottomWidth: 1,
         borderBottomColor: '#fff',
-        color: '#fff',
+        color: '#000',
     },
     buttonText: {
         fontSize: 18,
