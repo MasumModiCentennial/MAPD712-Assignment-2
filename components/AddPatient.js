@@ -10,15 +10,16 @@ import usernameIcon from '../src/images/ic_user.png'
 import emailIcon from '../src/images/ic_email.png'
 import phoneIcon from '../src/images/ic_phone.png'
 import addressIcon from '../src/images/ic_address.png'
-import { StyleSheet, TextInput, Image, TouchableOpacity, Text, View, Picker } from 'react-native';
+import addPatientIcon from '../src/images/ic_addPatient.png'
+import { StyleSheet, TextInput, Image, TouchableOpacity, Text, View } from 'react-native';
 
 export default function AddPatient({ navigation }) {
+
     return (
         <View style={styles.containerBody}>
             <StatusBar style="auto" />
             <View style={styles.containerLogo}>
-                {/* Add patient image to be added here */}
-                {/* <Image style={styles.tinyLogo} source={userIcon} /> */}
+                <Image style={styles.tinyLogo} source={addPatientIcon} />
             </View>
             <View style={styles.containerForm}>
                 <View style={styles.containerInput}>
@@ -48,14 +49,11 @@ export default function AddPatient({ navigation }) {
                         placeholder={'Age'}
                         placeholderTextColor="#78909c" />
                     <View style={styles.containerPicker}>
-                        <Picker
-                            style={{ color: 'black' }}
-                            placeholder={'Blood Type'} >
-                            <Picker.Item label="A+" value="A+" />
-                            <Picker.Item label="B+" value="B+" />
-                            <Picker.Item label="O+" value="O+" />
-                            <Picker.Item label="AB+" value="AB+" />
-                        </Picker>
+                        <select>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="O+">O+</option>
+                        </select>
                     </View>
                 </View>
                 <View style={styles.containerInput}>
@@ -132,6 +130,10 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#fff',
         color: '#fff',
+    },
+    dropDown: {
+        fontSize: 18,
+        color: '#fff'
     },
     buttonText: {
         fontSize: 18,
