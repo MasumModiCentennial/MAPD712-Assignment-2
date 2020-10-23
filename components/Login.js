@@ -1,7 +1,7 @@
 /*
 Name: Masum Modi and Manoj Manikantan Muralidharan
-Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
 Group No: 6
+Description : Login Screen
 */
 
 import { StatusBar } from 'expo-status-bar';
@@ -16,31 +16,31 @@ export default function Login({ navigation }) {
     <View style={styles.containerBody}>
       <StatusBar style="auto" />
       <View style={styles.containerLogo}>
-        <Image style={styles.tinyLogo} source={logoIcon}  />
+        <Image style={styles.tinyLogo} source={logoIcon} />
         <Text style={styles.title}>24x7 Medical Support</Text>
       </View>
       <View style={styles.containerForm}>
         <View style={styles.containerInput}>
-          <Image style={styles.inputIcon} source={usernameIcon}  />
+          <Image style={styles.inputIcon} source={usernameIcon} />
           <TextInput
             style={styles.input}
             placeholder={'Username'}
-            placeholderTextColor="#78909c"/>
+            placeholderTextColor="#78909c" />
         </View>
         <View style={styles.containerInput}>
-          <Image style={styles.inputIcon} source={passwordIcon}  />
+          <Image style={styles.inputIcon} source={passwordIcon} />
           <TextInput
             style={styles.input}
             placeholder={'Password'}
-            placeholderTextColor="#78909c"/>
+            placeholderTextColor="#78909c" />
         </View>
       </View>
       <TouchableOpacity style={styles.containerButton}>
-          <Text onPress={()=>navigation.navigate("PatientsList")} style={styles.buttonText}>Sign In</Text>
+        <Text onPress={() => navigation.navigate("PatientsList")} style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
       <View style={styles.containerLabel}>
         <Text style={styles.label}>Don't have an account?  </Text>
-        <Text onPress={()=>navigation.navigate("Signup")} style={styles.signUpLabel}>Sign up</Text>
+        <Text onPress={() => navigation.navigate("Signup")} style={styles.signUpLabel}>Sign up</Text>
       </View>
     </View>
   );
@@ -50,13 +50,13 @@ const styles = StyleSheet.create({
   containerBody: {
     flex: 1,
     backgroundColor: '#fff',
-  }, 
+  },
   containerLogo: {
     marginTop: 20,
     alignItems: 'center',
   },
   containerForm: {
-    flex:1,
+    flex: 1,
     margin: 40,
   },
   containerLabel: {
@@ -73,13 +73,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingBottom: 10,
     borderBottomWidth: 1,
-    borderBottomColor:'#78909c',
+    borderBottomColor: '#78909c',
   },
   containerButton: {
     backgroundColor: '#4dd0e1',
-    borderRadius:5,
-    marginLeft:40,
-    marginRight:40,
+    borderRadius: 5,
+    marginLeft: 40,
+    marginRight: 40,
     padding: 15,
   },
   tinyLogo: {
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 18,
-    marginLeft:20,
+    marginLeft: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#fff',
     color: '#fff',

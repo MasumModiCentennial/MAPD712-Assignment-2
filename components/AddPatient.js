@@ -1,7 +1,7 @@
 /*
 Name: Masum Modi and Manoj Manikantan Muralidharan
-Assignment: Milestone 2: Prototype, interface implementation, implementing selected functionality
 Group No: 6
+Description : Add Patient Screen
 */
 
 import { StatusBar } from 'expo-status-bar';
@@ -47,14 +47,16 @@ export default function AddPatient({ navigation }) {
                         style={styles.input}
                         placeholder={'Age'}
                         placeholderTextColor="#78909c" />
-                    <Picker
-                        style={styles.input}
-                        placeholder={'Blood Type'} >
-                        <Picker.Item label="A+" value="A+" />
-                        <Picker.Item label="B+" value="B+" />
-                        <Picker.Item label="O+" value="O+" />
-                        <Picker.Item label="AB+" value="AB+" />
-                    </Picker>
+                    <View style={styles.containerPicker}>
+                        <Picker
+                            style={{ color: 'black' }}
+                            placeholder={'Blood Type'} >
+                            <Picker.Item label="A+" value="A+" />
+                            <Picker.Item label="B+" value="B+" />
+                            <Picker.Item label="O+" value="O+" />
+                            <Picker.Item label="AB+" value="AB+" />
+                        </Picker>
+                    </View>
                 </View>
                 <View style={styles.containerInput}>
                     <Image style={styles.inputIcon} source={addressIcon} />
@@ -106,6 +108,10 @@ const styles = StyleSheet.create({
         marginLeft: 40,
         marginRight: 40,
         padding: 15,
+    },
+    containerPicker: {
+        flex: 1,
+        alignItems: "center"
     },
     tinyLogo: {
         width: 50,
