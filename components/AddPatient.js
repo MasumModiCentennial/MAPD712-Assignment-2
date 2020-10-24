@@ -11,7 +11,7 @@ import emailIcon from '../src/images/ic_email.png'
 import phoneIcon from '../src/images/ic_phone.png'
 import addressIcon from '../src/images/ic_address.png'
 import addPatientIcon from '../src/images/ic_addPatient.png'
-import { StyleSheet, TextInput, Image, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, TextInput, Image, TouchableOpacity, Text, View, Picker } from 'react-native';
 
 
 export default function AddPatient({ navigation }) {
@@ -22,29 +22,30 @@ export default function AddPatient({ navigation }) {
     const [phoneNum, setPhoneNum] = useState('');
     const [age, setAge] = useState('');
     const [address, setAddress] = useState('');
+    const [bloodType, setBloodType] = useState('');
 
     const onAddPatientClicked = () => {
-    
-        try{
+
+        try {
             fetch("http://192.168.1.6:4000/patients", {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                fullName: userName,
-                email: email,
-                mobileNum: phoneNum,
-                age: age,
-                bloodType: "B+",
-                address: address,
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    fullName: userName,
+                    email: email,
+                    mobileNum: phoneNum,
+                    age: age,
+                    bloodType: "B+",
+                    address: address,
+                })
             })
-            })
-            .then(response => response.json())
-            .then(responseJson => console.log('getting data from fetch', responseJson))
-            .catch(error=>console.log(error)) 
-        } catch (e){
+                .then(response => response.json())
+                .then(responseJson => console.log('getting data from fetch', responseJson))
+                .catch(error => console.log(error))
+        } catch (e) {
             console.log(e)
         }
     }
@@ -87,11 +88,14 @@ export default function AddPatient({ navigation }) {
                         onChangeText={txt => setAge(txt)}
                         placeholderTextColor="#78909c" />
                     <View style={styles.containerPicker}>
-                        {/* <select>
-                            <option value="A+">A+</option>
-                            <option value="B+">B+</option>
-                            <option value="O+">O+</option>
-                        </select> */}
+                        <Picker
+                            selectedValue={bloodType}
+                            onValueChange={(itemValue, itemIndex) => setBloodType(itemValue)} >
+                            <Picker.Item label="Blood Type" value="#N/A" />
+                            <Picker.Item label="A+" value="A+" />
+                            <Picker.Item label="B+" value="B+" />
+                            <Picker.Item label="O+" value="O+" />
+                        </Picker>
                     </View>
                 </View>
                 <View style={styles.containerInput}>
