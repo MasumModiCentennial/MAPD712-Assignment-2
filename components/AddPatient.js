@@ -81,21 +81,18 @@ export default function AddPatient({ navigation }) {
                         onChangeText={txt => setPhoneNum(txt)}
                         placeholderTextColor="#78909c" />
                 </View>
-                <View style={styles.containerInput}>
+                <View style={styles.containerSmallInput}>
                     <TextInput
-                        style={styles.input}
+                        style={styles.smallInput}
                         placeholder={'Age'}
                         onChangeText={txt => setAge(txt)}
                         placeholderTextColor="#78909c" />
                     <View style={styles.containerPicker}>
-                        <Picker
-                            selectedValue={bloodType}
-                            onValueChange={(itemValue, itemIndex) => setBloodType(itemValue)} >
-                            <Picker.Item label="Blood Type" value="#N/A" />
-                            <Picker.Item label="A+" value="A+" />
-                            <Picker.Item label="B+" value="B+" />
-                            <Picker.Item label="O+" value="O+" />
-                        </Picker>
+                    <TextInput
+                        style={styles.smallInput}
+                        placeholder={'Blood Type'}
+                        onChangeText={txt => setBloodType(txt)}
+                        placeholderTextColor="#78909c" />
                     </View>
                 </View>
                 <View style={styles.containerInput}>
@@ -143,6 +140,11 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#78909c',
     },
+    containerSmallInput: {
+        marginTop: 30,
+        flexDirection: 'row',
+        paddingBottom: 10,
+    },
     containerButton: {
         backgroundColor: '#4dd0e1',
         borderRadius: 5,
@@ -174,6 +176,15 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#fff',
         color: '#000',
+    },
+    smallInput: {
+        flex:1,
+        fontSize: 18,
+        borderBottomWidth: 1,
+        borderBottomColor: '#fff',
+        color: '#000',
+        borderBottomWidth: 1,
+        borderBottomColor: '#78909c',
     },
     dropDown: {
         fontSize: 18,
